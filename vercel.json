@@ -2,9 +2,9 @@
  
     "crons": [
         {
-          "path": "/index.js", 
-          "schedule": "* * * * *"
-        }
+            "path": "/api",
+            "schedule": "* * * * *"
+          }
       ],
     "builds":[
         {

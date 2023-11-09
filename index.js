@@ -6,6 +6,7 @@ const admin = require('firebase-admin');
 const FCM = require('fcm-node');
 
 
+var http = require('http');
 
 // Initialize Firebase Admin SDK
 // const serviceAccount = require('../config/reminder-81de8-firebase-adminsdk-hg2fm-cc483471e4.json');
@@ -214,16 +215,21 @@ const sendNotification = (deviceToken, title, body) => {
 
 var i = 0;
 
-//  collectionRef.doc("zUrGqULLIC2XJFC7jqNp").update({
-//   "tessting": "hosted"
-// })
-//   .then(() => {
-//     console.log('Document successfully updated.');
-//   })
-//   .catch(error => {
-//     console.error('Error updating document:', error);
-//   });
-cron.schedule('0 */1 * * * *', () => {
 
-checkAndSendNotifications();
+var server = http.createServer(function(req, res) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    var message = 'It work!\n sdsd',
+        version = 'NodeJS ' + process.versions.node + '\n',
+        response = [message, version].join('\n');
+        console.log("test");
+        cron.schedule('0 */1 * * * *', () => {
+          checkAndSendNotifications();
+      });
+
+console.log("test2");
+    res.end(response);
+});
+// Set up server to listen on port 3000
+server.listen(3000, () => {
+  console.log('Server is running on port 3000');
 });

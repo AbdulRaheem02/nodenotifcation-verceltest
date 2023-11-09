@@ -8,8 +8,9 @@ const FCM = require('fcm-node');
 
 
 // Initialize Firebase Admin SDK
-// const serviceAccount = require('../node js/config/push-notification-faa89-firebase-adminsdk-fwcra-31edb30c7a.json');
-const serviceAccount = require('../node js/config/reminder-81de8-firebase-adminsdk-hg2fm-cc483471e4.json');
+// const serviceAccount = require('../config/reminder-81de8-firebase-adminsdk-hg2fm-cc483471e4.json');
+const serviceAccount = require('./config/reminder-81de8-firebase-adminsdk-hg2fm-cc483471e4.json');
+
 
 
 
@@ -20,7 +21,6 @@ admin.initializeApp({
 
 // Initialize FCM with your FCM Server Key
 const serverKey = 'AAAAsIdMip8:APA91bHCLk8F7llguoC7NG7fkAANwPc50VZGly78kGNnnZ2iggIFt6Ah0KwcVgMvCtURE-GFvxO_Ipy1_s6-kxTK6xFm0bPIFyOdnOAnpB_87Srd4QvYyQNp_aJsVgTQbinBhrPn1vZH';
-// const serverKey = 'AAAA7OiX0ac:APA91bHFE73SefEE6oOjzOEdYtLuIi-7XUCTkYTgnER0Q7KkZtfTkd-2_t2z2vbYw5fcz4TPPZJSIocwhIl1TSNxy5mk7NFPJgddMeVDalWd07189Gx_5SmmNwzTKVl19A2afDw2eC7C'; // Replace with your FCM server key
 const fcm = new FCM(serverKey);
 
 // Reference to your Firestore collection

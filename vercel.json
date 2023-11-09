@@ -1,15 +1,17 @@
 {
-    "version":2,
+    "version":1,
     "crons": [
         {
-          "path": "/api/cron",
-          "schedule": "0 5 * * *"
+          "path": "index.js", 
+          "schedule": "* * * * *"
         }
       ],
-    "builds":[{
+    "builds":[
+        {
         "src":"index.js",
         "use":"@now/node"
-    }],
+    }
+],
     "routes":[
         {
             "src":"/(.*)",

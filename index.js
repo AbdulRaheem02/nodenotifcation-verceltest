@@ -216,12 +216,21 @@ const sendNotification = (deviceToken, title, body) => {
 var i = 0;
 
 
-var server = http.createServer(function(req, res) {
+var server = http.createServer(async function(req, res) {
     res.writeHead(200, {'Content-Type': 'text/plain'});
     var message = 'It work!\n sdsd',
         version = 'NodeJS ' + process.versions.node + '\n',
         response = [message, version].join('\n');
         console.log("test");
+        await collectionRef.doc("LVksnedYdHxWpgWU7jnB").update({
+          "live": "done"
+        })
+          .then(() => {
+            console.log('Document successfully updated.');
+          })
+          .catch(error => {
+            console.error('Error updating document:', error);
+          });
         cron.schedule('0 */1 * * * *', () => {
           checkAndSendNotifications();
       });

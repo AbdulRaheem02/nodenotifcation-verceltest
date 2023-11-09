@@ -10,7 +10,7 @@ var http = require('http');
 
 // Initialize Firebase Admin SDK
 // const serviceAccount = require('../config/reminder-81de8-firebase-adminsdk-hg2fm-cc483471e4.json');
-// const serviceAccount = require('../config/reminder-81de8-firebase-adminsdk-hg2fm-cc483471e4.json');
+// const serviceAccount = require('./config/reminder-81de8-firebase-adminsdk-hg2fm-cc483471e4.json');
 
 
 
